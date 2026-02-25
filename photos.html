@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Your Gallery 💕</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
       height: 100vh;
       overflow: hidden;
       background: #000;
     }
+
     .slideshow-container {
       position: relative;
       width: 100%;
       height: 100vh;
     }
+
     .slide {
       display: none;
       width: 100%;
@@ -26,23 +34,29 @@
       top: 0;
       left: 0;
     }
+
     .slide.active {
       display: block;
     }
+
     .caption {
       position: absolute;
-      bottom: 30px;
+      bottom: 120px;
       left: 50%;
       transform: translateX(-50%);
-      background: rgba(0,0,0,0.7);
+      background: rgba(0, 0, 0, 0.6);
       color: #fff;
-      padding: 15px 30px;
-      border-radius: 50px;
-      font-size: 1.4rem;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 1.1rem;
       font-weight: 600;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-      backdrop-filter: blur(10px);
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      width: auto;
+      white-space: nowrap;
     }
+
     .progress {
       position: absolute;
       top: 20px;
@@ -50,10 +64,11 @@
       transform: translateX(-50%);
       width: 300px;
       height: 4px;
-      background: rgba(255,255,255,0.3);
+      background: rgba(255, 255, 255, 0.3);
       border-radius: 2px;
       overflow: hidden;
     }
+
     .progress-fill {
       height: 100%;
       background: linear-gradient(90deg, #ff69b4, #ff1493);
@@ -61,28 +76,34 @@
       transition: width 5s linear;
       border-radius: 2px;
     }
+
     .next-btn {
       position: absolute;
-      bottom: 100px;
+      bottom: 40px;
       left: 50%;
       transform: translateX(-50%);
-      background: rgba(255,105,180,0.9);
+      background: rgba(255, 105, 180, 0.9);
       color: white;
       border: none;
-      padding: 12px 30px;
+      padding: 14px 30px;
       font-size: 1rem;
-      font-weight: 600;
+      font-weight: 700;
       border-radius: 50px;
       cursor: pointer;
       backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       transition: all 0.3s ease;
+      width: 85%;
+      max-width: 320px;
+      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
     }
-    .next-btn:hover {
-      background: rgba(255,20,147,1);
-      transform: translateX(-50%) translateY(-2px);
+
+    .next-btn:active {
+      transform: translateX(-50%) scale(0.96);
     }
   </style>
 </head>
+
 <body>
   <div class="slideshow-container">
     <img src="images/photo1.jpg" class="slide active" alt="Memory 1">
@@ -91,7 +112,7 @@
     <img src="images/photo4.jpg" class="slide" alt="Memory 4">
     <img src="images/photo5.jpg" class="slide" alt="Memory 5">
     <img src="images/photo6.jpg" class="slide" alt="Memory 6">
-    
+
     <div class="caption">Your Gallery🦋</div>
     <div class="progress">
       <div class="progress-fill" id="progressFill"></div>
@@ -120,4 +141,5 @@
   </script>
 
 </body>
+
 </html>

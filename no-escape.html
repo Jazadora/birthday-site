@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>No Escape! 😂</title>
@@ -21,68 +22,79 @@
       text-align: center;
       padding: 20px;
     }
+
     .card {
-      background: rgba(255,255,255,0.18);
-      padding: 32px 28px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 35px 25px;
       border-radius: 24px;
-      box-shadow: 0 8px 32px rgba(255,107,157,0.18);
-      border: 1.5px solid rgba(255,255,255,0.28);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      max-width: 320px;
+      width: 90%;
       backdrop-filter: blur(10px);
-      max-width: 400px;
-      width: 100%;
-      transition: box-shadow 0.2s;
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
-    .card:hover, .card:focus {
-      box-shadow: 0 12px 36px rgba(255,107,157,0.28);
+
+    .card:hover,
+    .card:focus {
+      box-shadow: 0 12px 36px rgba(255, 107, 157, 0.28);
     }
+
     h1 {
       color: #ff4757;
-      margin-bottom: 15px;
-      font-size: 1.6rem;
+      margin-bottom: 12px;
+      font-size: 1.5rem;
+      line-height: 1.2;
     }
+
     p {
       color: #333;
       margin-bottom: 25px;
-      font-size: 1.1rem;
-      line-height: 1.5;
+      font-size: 1rem;
+      line-height: 1.4;
       font-weight: 500;
     }
+
     button {
       padding: 14px 30px;
-      border-radius: 30px;
+      border-radius: 50px;
       border: none;
       background: linear-gradient(45deg, #ff6b9d, #ff8fab);
       color: white;
-      font-weight: 600;
-      font-size: 1.1rem;
+      font-weight: 700;
+      font-size: 1rem;
       cursor: pointer;
-      box-shadow: 0 8px 25px rgba(255,107,157,0.4);
-      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+      transition: transform 0.2s;
+      width: 100%;
     }
+
     button:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 35px rgba(255,107,157,0.6);
+      box-shadow: 0 12px 35px rgba(255, 107, 157, 0.6);
     }
+
     footer {
       position: fixed;
       bottom: 15px;
       left: 50%;
       transform: translateX(-50%);
-      color: rgba(0,0,0,0.7);
+      color: rgba(0, 0, 0, 0.7);
       font-family: Arial, sans-serif;
       font-size: 0.75rem;
       text-align: center;
       z-index: 1000;
-      text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+      text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
       pointer-events: none;
     }
   </style>
 </head>
+
 <body>
   <div class="card">
     <h1>Herh Madam! 😂</h1>
     <p>Don't try me o! There's no way to escape from me 😈<br>Just watch the memories abeg!</p>
-    
+
     <button onclick="window.location.href='camera-memories.html'">
       Okay okay, show me 📹
     </button>
@@ -92,4 +104,5 @@
     Jazmindesigns © 2026 💖
   </footer>
 </body>
+
 </html>
