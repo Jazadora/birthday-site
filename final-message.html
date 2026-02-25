@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Final Message 🎬</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('images/background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .card {
+      background: rgba(255,255,255,0.18);
+      padding: 32px 28px;
+      border-radius: 24px;
+      box-shadow: 0 8px 32px rgba(255,107,157,0.18);
+      border: 1.5px solid rgba(255,255,255,0.28);
+      backdrop-filter: blur(10px);
+      max-width: 420px;
+      width: 100%;
+      transition: box-shadow 0.2s;
+    }
+    .card:hover, .card:focus {
+      box-shadow: 0 12px 36px rgba(255,107,157,0.28);
+    }
+    h1 {
+      color: #ff6b9d;
+      margin-bottom: 18px;
+      font-size: 1.5rem;
+    }
+    p {
+      color: #333;
+      margin-bottom: 22px;
+      font-size: 1.08rem;
+      line-height: 1.5;
+    }
+    video {
+      width: 100%;
+      max-width: 340px;
+      border-radius: 18px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+      margin-bottom: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Thank You for Watching! 🎉</h1>
+    <p>This is my final message for you. I hope you enjoyed everything. Here's one last video to end it all beautifully. 💖</p>
+    <video controls poster="images/photo1.jpg">
+      <source src="videos/final-message.mp4" type="video/mp4">
+      Your browser doesn't support the video tag.
+    </video>
+  </div>
+</body>
+</html>

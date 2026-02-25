@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Memories on Camera? 📹</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #a8edea, #fed6e3);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .card {
+      background: rgba(255,255,255,0.18);
+      padding: 32px 28px;
+      border-radius: 24px;
+      box-shadow: 0 8px 32px rgba(255,107,157,0.18);
+      border: 1.5px solid rgba(255,255,255,0.28);
+      backdrop-filter: blur(10px);
+      max-width: 400px;
+      width: 100%;
+      transition: box-shadow 0.2s;
+    }
+    .card:hover, .card:focus {
+      box-shadow: 0 12px 36px rgba(255,107,157,0.28);
+    }
+    h1 {
+      color: #ff6b9d;
+      margin-bottom: 15px;
+      font-size: 1.6rem;
+    }
+    p {
+      color: #333;
+      margin-bottom: 25px;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+    .buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    button {
+      padding: 12px 25px;
+      border-radius: 30px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    .yes {
+      background: linear-gradient(45deg, #ff6b9d, #ff8fab);
+      color: white;
+      box-shadow: 0 6px 20px rgba(255,107,157,0.4);
+    }
+    .no {
+      background: #f7d6e9;
+      color: #ff6b9d;
+    }
+    button:hover {
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <!-- Background selector section -->
+  <div style="max-width:400px;margin:0 auto 18px;text-align:center;padding:8px 0;">
+    <form id="bgForm">
+      <label for="bgSelect" style="color:#ff6b9d;font-size:1rem;margin-right:10px;">Choose a background image:</label>
+      <select id="bgSelect" style="padding:8px 16px;border-radius:16px;font-size:1rem;">
+        <option value="">Default Gradient</option>
+        <option value="images/photo1.jpg">Photo 1</option>
+        <option value="images/photo2.jpg">Photo 2</option>
+        <option value="images/photo3.jpg">Photo 3</option>
+        <option value="images/photo4.jpg">Photo 4</option>
+        <option value="images/photo5.jpg">Photo 5</option>
+        <option value="images/photo6.jpg">Photo 6</option>
+      </select>
+    </form>
+  </div>
+  <div id="photo-preview-container" style="display:none;justify-content:center;align-items:center;margin-bottom:18px;">
+    <img id="photo-preview" src="" alt="Background preview" style="max-width:180px;max-height:180px;border-radius:18px;box-shadow:0 4px 16px rgba(0,0,0,0.10);object-fit:cover;" />
+  </div>
+  <div class="card">
+    <h1>📹 Memories on Camera?</h1>
+    <p>Want to see the little memories we share on camera? 🥰</p>
+    
+    <div class="buttons">
+      <button class="yes" onclick="window.location.href='camera-memories.html'">
+        Yes please! 😍
+      </button>
+      <button class="no" onclick="window.location.href='no-escape.html'">
+        No thanks 🙅‍♀️
+      </button>
+    </div>
+  </div>
+
+</body>
+<script>
+  // Background selector logic and preview
+  const bgSelect = document.getElementById('bgSelect');
+  const previewContainer = document.getElementById('photo-preview-container');
+  const previewImg = document.getElementById('photo-preview');
+  bgSelect.addEventListener('change', function(e) {
+    var val = e.target.value;
+    if (val) {
+      document.body.style.backgroundImage = 'url(' + val + ')';
+      document.body.style.backgroundSize = 'cover';
+      document.body.style.backgroundPosition = 'center';
+      document.body.style.backgroundRepeat = 'no-repeat';
+      previewImg.src = val;
+      previewContainer.style.display = 'flex';
+    } else {
+      document.body.style.backgroundImage = '';
+      document.body.style.background = 'linear-gradient(135deg, #a8edea, #fed6e3)';
+      previewImg.src = '';
+      previewContainer.style.display = 'none';
+    }
+  });
+</script>
+</html>

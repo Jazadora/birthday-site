@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Gallery 💕</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      overflow: hidden;
+      background: #000;
+    }
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+    }
+    .slide {
+      display: none;
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .slide.active {
+      display: block;
+    }
+    .caption {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-size: 1.4rem;
+      font-weight: 600;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+      backdrop-filter: blur(10px);
+    }
+    .progress {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+      height: 4px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #ff69b4, #ff1493);
+      width: 0%;
+      transition: width 5s linear;
+      border-radius: 2px;
+    }
+    .next-btn {
+      position: absolute;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255,105,180,0.9);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    .next-btn:hover {
+      background: rgba(255,20,147,1);
+      transform: translateX(-50%) translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="slideshow-container">
+    <img src="images/photo1.jpg" class="slide active" alt="Memory 1">
+    <img src="images/photo2.jpg" class="slide" alt="Memory 2">
+    <img src="images/photo3.jpg" class="slide" alt="Memory 3">
+    <img src="images/photo4.jpg" class="slide" alt="Memory 4">
+    <img src="images/photo5.jpg" class="slide" alt="Memory 5">
+    <img src="images/photo6.jpg" class="slide" alt="Memory 6">
+    
+    <div class="caption">Your Gallery🦋</div>
+    <div class="progress">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <button class="next-btn" onclick="window.location.href='yes-message.html'">
+      Next → My message💌
+    </button>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    const slideDuration = 2000;
+    function nextSlide() {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % totalSlides;
+      slides[currentSlide].classList.add('active');
+      document.getElementById('progressFill').style.width = '0%';
+      setTimeout(() => {
+        document.getElementById('progressFill').style.width = '90%';
+      }, 50);
+    }
+    setInterval(nextSlide, slideDuration);
+    document.getElementById('progressFill').style.width = '90%';
+  </script>
+
+</body>
+</html>
